@@ -1083,6 +1083,9 @@ input[type="submit"] {
 
 .cart{
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 300px;
   height: 100vh;
   padding: 4rem;
@@ -1097,6 +1100,17 @@ input[type="submit"] {
 .cart.open{
   right: 0;
   transition: .5s ease-in-out;
+}
+
+.cart ul{
+  border-top: 1px solid #e6e6e6;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart ul li:last-child{
+  font-weight: bold;
 }
 
 .cart button.cartClose{
@@ -1131,8 +1145,8 @@ input[type="submit"] {
   left: -20px;
   transform: translateY(-50%);
   background: red;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   align-items: center;
   border-radius: 50%;
   border: none;
@@ -1149,12 +1163,17 @@ input[type="submit"] {
 .btnAddtoCart{
   display: block;
   text-align: center;
+  margin-top: 1rem;
   padding: 10px 16px;
   background-color: #f09400;
   color: white;
   border-radius: 5px;
   border: none;
   width: 100%;
+}
+
+.btnAddtoCart i{
+  margin-right: 1rem;
 }
 
 .header__nav{
@@ -1187,4 +1206,59 @@ input[type="submit"] {
   justify-content: center;
   align-items: center;
   display: none;
+}
+
+.page__hero{
+  text-align: center;
+  padding: clamp(20px, 6vw, 40px);
+  background-color: #e3163c;
+  color: white;
+  border-top: 4px solid #f09400;
+}
+
+.page__hero h1{
+  font-size: clamp(30px, 6vw, 45px);
+}
+
+.full__width{
+  padding: clamp(20px, 6vw, 30px) 0;
+}
+
+.full__width p{
+  font-size: 18px;
+}
+
+.two__cols{
+  padding: clamp(20px, 6vw, 30px) 0;
+}
+
+.two__cols__grid{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.two__cols__grid > div {
+  flex-basis: 50%;
+}
+
+.two__cols__grid img{
+  object-fit: cover;
+  width: 100%;
+  height: 450px;
+}
+
+.two__cols__grid h3{
+  color: #e3163c;
+  font-size: clamp(18px, 6vw, 30px);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.two__cols__grid p{
+  font-size: 18px;
+}
+
+.two__cols.row__reverse .two__cols__grid{
+  flex-direction: row-reverse;
 }

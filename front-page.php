@@ -1,6 +1,15 @@
 <?php get_header(); ?>
 
-<section class="food py--3">
+<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+    <?php the_content(); ?>
+<?php endwhile;
+    else :
+        echo "no more post";
+    endif;
+
+?>
+
+<!-- <section class="food py--3">
     <div class="container">
         <div class="food__header flex justify--between align--center">
             <h2>Best Seller</h2>
@@ -254,14 +263,18 @@
                 wp_reset_postdata();
             ?>
     </div>
-</section>
+</section> -->
 
 <div class="cart">
-    <h2>Cart</h2>
-    <button class="cartClose"><i class="fas fa-times"></i></button>
-    <div class="cart__wrapper">
-        
+    <div>
+        <h2>Cart</h2>
+        <button class="cartClose"><i class="fas fa-times"></i></button>
+        <div class="cart__wrapper"></div>
     </div>
+    <ul>
+        <li>Total</li>
+        <li id="total"></li>
+    </ul>
 </div>
 
 <?php get_footer(); ?>
