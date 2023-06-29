@@ -14,28 +14,30 @@
           </figure>
 
           <div class="single__content">
-          <ul class="flex">
-                    <?php
-                        for ($x = 1; $x <= get_field('rating'); $x++) { ?>
-                            <li><i class='fas fa-star'></i></li>
-                            <?php }
-                    ?>
-          </ul>
+            <ul class="flex">
+                      <?php
+                          for ($x = 1; $x <= get_field('rating'); $x++) { ?>
+                              <li><i class='fas fa-star'></i></li>
+                              <?php }
+                      ?>
+            </ul>
 
-            <p><?php the_field('description'); ?></p>
+              <p><?php the_field('description'); ?></p>
 
-            <h3>Options</h3>
-            <form action="">
-              <ul class="flex">
-                <li><input type="radio" name="option" /> Solo</li>
-                <li><input type="radio" name="option" /> With Drinks</li>
+              <h3>Options</h3>
+              <ul class="addon">
+                <?php
+                  $options =  get_field('addons') ?>
+
+                  <?php foreach( $options as $option): ?>
+                      <li><input type="checkbox" /> <?php echo $option; ?></li>
+                  <?php endforeach; ?>
               </ul>
-            </form>
 
-            <div class="action">
-              <h2>Php <?php the_field('price'); ?>.00</h2>
-              <button class="bg--secondary clr--light">Add to Cart</button>
-            </div>
+              <div class="action">
+                <h2>Php <?php the_field('price'); ?>.00</h2>
+                <button class="bg--secondary clr--light">Add to Cart</button>
+              </div>
           </div>
         </div>
       </div>

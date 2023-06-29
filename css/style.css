@@ -1262,3 +1262,9 @@ input[type="submit"] {
 .two__cols.row__reverse .two__cols__grid{
   flex-direction: row-reverse;
 }
+
+.single__content ul.addon{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
